@@ -1,58 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Clean Pixel Modern UI - Laravel Portfolio 🚀
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A highly optimized, modern, and cinematic portfolio website built with Laravel. This project features the **"H-PERF PIXEL UI"** aesthetic—a design system that blends clean minimalism with cyberpunk-inspired pixel UI, fluid 60FPS animations, and glassmorphism. 
 
-## About Laravel
+Designed for ultra-smooth user experiences, it utilizes **GSAP** and **Lenis** to create a native app-like scroll feel, alongside a powerful centralized Admin Dashboard to manage every aspect of the portfolio dynamically.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Key Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🎨 Frontend (Guest Experience)
+- **H-PERF PIXEL UI Design System:** A strict, premium UI identity utilizing tailwind-customized colors (`#f5f5f5` base, `#1e293b` text, and `#22d3ee` cyan neon glow accents).
+- **Cinematic Liquid Loader:** A beautifully staggered, dual-layered water-fill animation loading screen utilizing CSS keyframes and `requestAnimationFrame`.
+- **Interactive Matrix Particle Swarm:** Floating ambient pixel particles that react to cursor proximity using GSAP math distance repulsion physics.
+- **Synchronized Smooth Scroll:** Lenis combined with GSAP ticker loop ensuring zero-jitter, 60fps scrolling and native scrubber translations.
+- **Pixel Wave Theme Transition:** A high-performance Dark/Light mode toggle that sweeps across the screen in dynamic CSS blocks.
+- **Global Lightbox System:** Instantly preview documentations and images on a single page directly via native overlay modal.
+- **Gateway Security Checkpoint:** Mandatory reCAPTCHA verification gateway enforcing anti-spam policies globally. 
 
-## Learning Laravel
+### 🔐 Backend (Admin System)
+- **Comprehensive CMS Panel:** Manage Projects (with toggle publish & sort features), Skills, Certificates, Experiences, Activities, and Profile details.
+- **Inbox Management:** Track and reply to contact messages sent securely via the frontend forms.
+- **Rate-Limited Endpoints:** Form submissions and gateway verifications are throttled (`throttle:5,1`) to prevent abuse.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Technology Stack
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- **Backend:** Laravel 11/13 (PHP 8.3+)
+- **Database:** MySQL 
+- **Styling:** Tailwind CSS (with intricate custom JIT root variables)
+- **Animations:** GSAP (GreenSock) & CSS Transitions
+- **Scroll Engine:** @studio-freight/lenis
+- **Security:** Google reCAPTCHA v2 API
+- **Deployment Structure:** Laragon-ready, Composer, NPM for Vite bundling.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🚀 Installation & Setup
 
-```bash
-composer require laravel/boost --dev
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CleonThadeas/portofolio.git
+   cd portofolio
+   ```
 
-php artisan boost:install
-```
+2. **Install Dependencies:**
+   ```bash
+   composer install
+   npm install
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+3. **Environment Setup:**
+   Copy the `.env` example file and generate an application key:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. **Configure the Database & API Keys:**
+   Update your `.env` file with your precise MySQL credentials, Mail server data, and Google reCAPTCHA keys:
+   ```env
+   DB_DATABASE=portofolioandry
+   DB_USERNAME=root
+   DB_PASSWORD=
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   # reCAPTCHA config
+   RECAPTCHA_SITE_KEY=your_site_key_here
+   RECAPTCHA_SECRET_KEY=your_secret_key_here
+   ```
 
-## Code of Conduct
+5. **Migrate and Seed the Database:**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+   *(The seeder generates an initial Admin user and sample portfolio data.)*
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Compile Frontend Assets:**
+   ```bash
+   npm run build
+   # Or for development: npm run dev
+   ```
 
-## Security Vulnerabilities
+7. **Run the Application:**
+   ```bash
+   php artisan serve
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🔒 Security
+- This project leverages strong password hashing (Bcrypt).
+- The `GuestGateway` middleware protects frontend access using session state injection verified against Google `siteverify` servers.
+- **If you are testing locally (`localhost`)**, please ensure you append `localhost` to your Google reCAPTCHA Admin Console supported domains to avoid key blocks.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+*Designed and Developed passionately with 🩵 for a stunning web experience.*
