@@ -14,7 +14,7 @@
 /.zed
 /auth.json
 /node_modules
-/public/build
+# /public/build (Diizinkan sementara untuk deployment ke ct.ws)
 /public/hot
 /public/storage
 /storage/*.key
