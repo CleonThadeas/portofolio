@@ -295,7 +295,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             @foreach ($allProjects as $project)
-                <div class="project-card h-80 sm:h-96 w-full rounded-2xl group gsap-reveal gs-stagger block">
+                <div class="project-card min-h-[20rem] sm:min-h-[24rem] w-full rounded-2xl group gsap-reveal gs-stagger block">
                     <div class="project-glitch-layer"></div>
                     
                     @if ($project->thumbnail)
