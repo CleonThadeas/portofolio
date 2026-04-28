@@ -226,7 +226,7 @@
 <section id="about" class="py-28 px-6">
     <div class="max-w-4xl mx-auto gsap-reveal gs-stagger">
         <div class="flex items-center gap-6 mb-12">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)]">About</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] notranslate">About</h2>
             <div class="h-px flex-1 bg-[var(--border-soft)]"></div>
             <div class="w-2 h-2 bg-[var(--primary)] shrink-0"></div>
         </div>
@@ -244,7 +244,7 @@
 <section id="skills" class="py-28 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="gsap-reveal gs-stagger flex items-center gap-6 mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)]">Skills</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] notranslate">Skills</h2>
             <div class="h-px flex-1 bg-[var(--border-soft)]"></div>
             <div class="w-2 h-2 bg-[var(--accent)] shrink-0"></div>
         </div>
@@ -286,7 +286,7 @@
 <section id="projects" class="py-28 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="gsap-reveal gs-stagger flex items-center gap-6 mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)]">Selected Work</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] notranslate">Selected Work</h2>
             <div class="h-px flex-1 bg-[var(--border-soft)]"></div>
             <a href="{{ route('projects.archive') }}" class="text-xs font-bold font-mono tracking-widest text-[var(--primary)] hover:text-[var(--accent)] uppercase transition-colors shrink-0 flex items-center gap-2">
                 Archives <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -339,7 +339,7 @@
 <section id="experience" class="py-28 px-6 overflow-hidden relative">
     <div class="max-w-6xl mx-auto relative z-10">
         <div class="gsap-reveal gs-stagger flex items-center gap-6 mb-20">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)]">Experience</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] notranslate">Experience</h2>
             <div class="h-px flex-1 bg-[var(--border-soft)]"></div>
              <a href="{{ route('experiences.archive') }}" class="text-xs font-bold font-mono tracking-widest text-[var(--primary)] hover:text-[var(--accent)] uppercase transition-colors shrink-0 flex items-center gap-2">
                 All Timeline <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -409,7 +409,7 @@
 <section id="activities" class="py-28 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="gsap-reveal gs-stagger flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] text-center md:text-left">Achievements</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] text-center md:text-left notranslate">Achievements</h2>
             <div class="flex gap-4">
                 <a href="{{ route('certificates.archive') }}" class="px-5 py-2 text-xs font-bold uppercase tracking-wider border border-[var(--border-soft)] hover:border-[var(--primary)] transition-colors rounded-none">Certificates</a>
                 <a href="{{ route('activities.archive') }}" class="px-5 py-2 text-xs font-bold uppercase tracking-wider border border-[var(--border-soft)] hover:border-[var(--primary)] transition-colors rounded-none">Activities</a>
@@ -455,7 +455,7 @@
 <section id="contact" class="py-28 px-6 mb-10">
     <div class="max-w-2xl mx-auto">
         <div class="text-center mb-16 gsap-reveal gs-stagger">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] mb-6">Let's Talk</h2>
+            <h2 class="text-3xl md:text-5xl font-bold font-heading text-[var(--text-primary)] mb-6 notranslate">Let's Talk</h2>
             <p class="text-[var(--text-secondary)] font-light text-lg">Interested in working together or just wanted to say hi?</p>
         </div>
 
