@@ -278,7 +278,7 @@
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 text-sm">
                 <div>
-                    <h3 class="font-heading font-bold text-lg mb-1 text-[var(--text-primary)]">{{ $profile->name ?? 'Developer' }}</h3>
+                    <h3 class="font-heading font-bold text-lg mb-1 text-[var(--text-primary)] notranslate">{{ $profile->name ?? 'Developer' }}</h3>
                     <p class="text-[var(--text-secondary)]">{{ $profile->headline ?? 'Full-Stack Developer' }}</p>
                 </div>
                 <!-- Links -->

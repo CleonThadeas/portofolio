@@ -193,7 +193,7 @@
             </div>
         @else
             <div class="w-32 h-32 md:w-40 md:h-40 rounded-xl bg-[var(--bg-surface)] border-2 border-[var(--border-soft)] flex items-center justify-center shadow-2xl z-10 relative">
-                <span class="text-4xl font-heading font-black text-[var(--primary)]">{{ strtoupper(substr($profile->name ?? 'A', 0, 1)) }}</span>
+                <span class="text-4xl font-heading font-black text-[var(--primary)] notranslate">{{ strtoupper(substr($profile->name ?? 'A', 0, 1)) }}</span>
             </div>
         @endif
         {{-- Hero geometric accent --}}
@@ -204,7 +204,7 @@
         Hello, I am
     </p>
     
-    <h1 class="gsap-hero text-5xl sm:text-6xl md:text-8xl font-black font-heading tracking-tight mb-8 text-[var(--text-primary)] relative z-10">
+    <h1 class="gsap-hero text-5xl sm:text-6xl md:text-8xl font-black font-heading tracking-tight mb-8 text-[var(--text-primary)] relative z-10 notranslate">
         {{ $profile->name ?? 'Developer' }}<span class="text-[var(--accent)]">.</span>
     </h1>
     
