@@ -38,6 +38,8 @@ class ActivityController extends Controller
         }
         $validated['documentation'] = $docs;
 
+        $validated['is_featured'] = $request->boolean('is_featured');
+
         Activity::create($validated);
 
         return redirect()->route('admin.activities.index')->with('success', 'Activity created successfully.');
@@ -74,6 +76,8 @@ class ActivityController extends Controller
         }
 
         $validated['documentation'] = $docs;
+
+        $validated['is_featured'] = $request->boolean('is_featured');
 
         $activity->update($validated);
 

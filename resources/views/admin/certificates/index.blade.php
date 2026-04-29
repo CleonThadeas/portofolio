@@ -24,7 +24,12 @@
         <tbody class="divide-y divide-slate-800/50">
             @forelse ($certificates as $cert)
                 <tr class="hover:bg-slate-800/30 transition">
-                    <td class="px-4 py-3 text-white font-medium">{{ $cert->name }}</td>
+                    <td class="px-4 py-3 text-white font-medium">
+                        {{ $cert->name }}
+                        @if($cert->is_featured)
+                            <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">Featured</span>
+                        @endif
+                    </td>
                     <td class="px-4 py-3 text-slate-400 hidden sm:table-cell">{{ $cert->issuer ?? '-' }}</td>
                     <td class="px-4 py-3 text-slate-400 hidden sm:table-cell">{{ $cert->date ? $cert->date->format('M Y') : '-' }}</td>
                     <td class="px-4 py-3 text-center">

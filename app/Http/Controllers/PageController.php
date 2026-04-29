@@ -21,9 +21,9 @@ class PageController extends Controller
         $projects = Project::published()->featured()->orderBy('sort_order')->take(4)->get();
         $allProjects = Project::published()->orderBy('sort_order')->get();
         $skills = Skill::orderBy('category')->orderBy('level', 'desc')->get();
-        $certificates = Certificate::latest('date')->take(4)->get();
-        $experiences = Experience::latest('start_date')->take(4)->get();
-        $activities = Activity::latest('date')->take(4)->get();
+        $certificates = Certificate::where('is_featured', true)->latest('date')->take(3)->get();
+        $experiences = Experience::oldest('start_date')->take(4)->get();
+        $activities = Activity::where('is_featured', true)->latest('date')->take(3)->get();
 
         return view('guest.home', compact(
             'profile', 'projects', 'allProjects', 'skills',
@@ -48,7 +48,7 @@ class PageController extends Controller
     public function experiencesArchive()
     {
         $profile = Profile::first();
-        $experiences = Experience::latest('start_date')->get();
+        $experiences = Experience::oldest('start_date')->get();
         return view('guest.experiences', compact('experiences', 'profile'));
     }
 

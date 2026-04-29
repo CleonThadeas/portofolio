@@ -36,6 +36,8 @@ class CertificateController extends Controller
             $validated['file_type'] = $file->getClientOriginalExtension();
         }
 
+        $validated['is_featured'] = $request->boolean('is_featured');
+
         Certificate::create($validated);
 
         return redirect()->route('admin.certificates.index')->with('success', 'Certificate created successfully.');
@@ -64,6 +66,8 @@ class CertificateController extends Controller
             $validated['file_path'] = $file->store('certificates', 'public');
             $validated['file_type'] = $file->getClientOriginalExtension();
         }
+
+        $validated['is_featured'] = $request->boolean('is_featured');
 
         $certificate->update($validated);
 

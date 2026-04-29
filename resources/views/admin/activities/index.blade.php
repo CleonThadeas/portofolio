@@ -24,7 +24,12 @@
         <tbody class="divide-y divide-slate-800/50">
             @forelse ($activities as $activity)
                 <tr class="hover:bg-slate-800/30 transition">
-                    <td class="px-4 py-3 text-white font-medium">{{ $activity->title }}</td>
+                    <td class="px-4 py-3 text-white font-medium">
+                        {{ $activity->title }}
+                        @if($activity->is_featured)
+                            <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">Featured</span>
+                        @endif
+                    </td>
                     <td class="px-4 py-3 hidden sm:table-cell"><span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400">{{ $activity->type ?? '-' }}</span></td>
                     <td class="px-4 py-3 text-slate-400 text-xs hidden sm:table-cell">{{ $activity->date ? $activity->date->format('M d, Y') : '-' }}</td>
                     <td class="px-4 py-3 text-center text-xs text-slate-400">{{ count($activity->documentation ?? []) }}</td>
