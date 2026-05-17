@@ -15,8 +15,8 @@ class GuestGateway
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Require verification if missing
-        if (!session('recaptcha_verified')) {
+        // Require verification if missing (except in local environment)
+        if (!app()->environment('local') && !session('recaptcha_verified')) {
             // Keep intended url if using standard intended workflow or just store in session if needed
             return redirect()->route('gateway.index');
         }
