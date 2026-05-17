@@ -66,6 +66,20 @@ class PageController extends Controller
         return view('guest.activities', compact('activities', 'profile'));
     }
 
+    public function certificateDetail($id)
+    {
+        $certificate = Certificate::findOrFail($id);
+        $profile = Profile::first();
+        return view('guest.certificate-detail', compact('certificate', 'profile'));
+    }
+
+    public function activityDetail($id)
+    {
+        $activity = Activity::findOrFail($id);
+        $profile = Profile::first();
+        return view('guest.activity-detail', compact('activity', 'profile'));
+    }
+
     public function sendMessage(Request $request)
     {
         $validated = $request->validate([

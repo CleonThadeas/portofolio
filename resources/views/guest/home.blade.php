@@ -425,7 +425,8 @@
                             <h3 class="font-bold text-[var(--text-primary)] text-xl font-heading">{{ $activity->title }}</h3>
                             <span class="text-[10px] uppercase font-mono tracking-widest text-[var(--primary)] shrink-0 bg-[var(--primary)]/10 px-2 py-1 rounded-sm">{{ $activity->date ? $activity->date->format('M Y') : 'N/A' }}</span>
                         </div>
-                        <p class="text-[var(--text-secondary)] font-light leading-relaxed line-clamp-3">{{ $activity->description }}</p>
+                        <p class="text-[var(--text-secondary)] font-light leading-relaxed line-clamp-3 mb-4">{{ $activity->description }}</p>
+                        <a href="{{ route('activity.detail', $activity->id) }}" class="text-xs font-bold text-[var(--primary)] hover:text-[var(--accent)] transition-colors inline-block group-hover:translate-x-1 duration-300">Read More &rarr;</a>
                     </div>
                 @endforeach
             </div>
@@ -438,11 +439,9 @@
                             <svg class="w-6 h-6 text-[var(--primary)] group-hover:text-[var(--accent)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-[var(--text-primary)] text-lg font-heading mb-1">{{ $cert->name }}</h3>
+                            <a href="{{ route('certificate.detail', $cert->id) }}" class="block font-bold text-[var(--text-primary)] hover:text-[var(--primary)] text-lg font-heading mb-1 transition-colors">{{ $cert->name }}</a>
                             <p class="text-xs text-[var(--text-secondary)] font-mono uppercase tracking-widest mb-3">{{ $cert->issuer }}</p>
-                            @if ($cert->file_path)
-                                <a href="{{ asset('storage/' . $cert->file_path) }}" target="_blank" class="text-xs font-bold text-[var(--primary)] hover:text-[var(--accent)] transition-colors inline-block group-hover:translate-x-1 duration-300">View Credential &rarr;</a>
-                            @endif
+                            <a href="{{ route('certificate.detail', $cert->id) }}" class="text-xs font-bold text-[var(--primary)] hover:text-[var(--accent)] transition-colors inline-block group-hover:translate-x-1 duration-300">View Details &rarr;</a>
                         </div>
                     </div>
                 @endforeach

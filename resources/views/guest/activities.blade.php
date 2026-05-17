@@ -23,7 +23,7 @@
         @forelse ($activities as $activity)
             <div class="glass-card bg-[#EFF6FF] dark:bg-[#0B1220] p-8 rounded-[2.5rem] hover:shadow-2xl dark:hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-all duration-500 border border-[#BFDBFE] dark:border-[#1E293B] hover:border-[#60A5FA] dark:hover:border-[#2563EB] group">
                 <div class="flex items-start justify-between mb-6 gap-4">
-                    <h3 class="text-2xl font-bold text-[#1E3A8A] dark:text-white">{{ $activity->title }}</h3>
+                    <a href="{{ route('activity.detail', $activity->id) }}" class="block text-2xl font-bold text-[#1E3A8A] hover:text-[#2563EB] dark:text-white dark:hover:text-[#93C5FD] transition-colors">{{ $activity->title }}</a>
                     @if ($activity->type)
                         <span class="text-xs px-4 py-1.5 rounded-full bg-[#DBEAFE] dark:bg-[#1E3A8A]/40 text-[#1D4ED8] dark:text-[#93C5FD] font-bold shrink-0 border border-[#93C5FD] dark:border-[#2563EB]/50 whitespace-nowrap">{{ $activity->type }}</span>
                     @endif
@@ -35,7 +35,12 @@
                 </div>
                 
                 @if ($activity->description)
-                    <p class="text-[#475569] dark:text-slate-300 font-light leading-relaxed mb-6">{{ $activity->description }}</p>
+                    <p class="text-[#475569] dark:text-slate-300 font-light leading-relaxed mb-4">{{ Str::limit($activity->description, 250) }}</p>
+                    <div class="mb-6">
+                        <a href="{{ route('activity.detail', $activity->id) }}" class="inline-flex items-center gap-2 text-sm font-bold text-[#1E3A8A] hover:text-[#2563EB] dark:text-[#60A5FA] dark:hover:text-[#93C5FD] transition-colors">
+                            Read Full Details &rarr;
+                        </a>
+                    </div>
                 @endif
                 
                 @if ($activity->documentation && count($activity->documentation))

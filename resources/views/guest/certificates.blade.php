@@ -25,7 +25,7 @@
                 <div class="w-14 h-14 rounded-2xl bg-[#DBEAFE] dark:bg-[#0B1220] border border-[#93C5FD] dark:border-[#1E293B] flex items-center justify-center mb-6 transition-colors group-hover:bg-[#BFDBFE] dark:group-hover:bg-[#1E3A8A]">
                     <svg class="w-7 h-7 text-[#1D4ED8] dark:text-cyan-400 group-hover:text-[#1E3A8A] dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <h3 class="text-lg font-bold text-[#1E3A8A] dark:text-white mb-2">{{ $cert->name }}</h3>
+                <a href="{{ route('certificate.detail', $cert->id) }}" class="block text-lg font-bold text-[#1E3A8A] hover:text-[#2563EB] dark:text-white dark:hover:text-[#93C5FD] mb-2 transition-colors">{{ $cert->name }}</a>
                 <p class="text-[#2563EB] dark:text-[#60A5FA] text-sm mb-4 font-bold">{{ $cert->issuer }}</p>
                 
                 @if ($cert->description)
@@ -34,11 +34,11 @@
                 
                 <div class="flex items-center justify-between mt-auto">
                     <span class="text-xs text-[#64748B] dark:text-[#94A3B8] font-mono font-bold">{{ $cert->date ? $cert->date->format('M Y') : 'No Date' }}</span>
-                    @if ($cert->file_path)
-                        <a href="{{ asset('storage/' . $cert->file_path) }}" target="_blank" class="text-xs font-bold text-[#1E3A8A] dark:text-[#E3F2FD] bg-[#DBEAFE] dark:bg-[#0F172A] hover:bg-[#BFDBFE] dark:hover:bg-[#2563EB] border border-[#93C5FD] dark:border-[#1E293B] shadow-sm px-5 py-2.5 rounded-full transition-colors flex items-center gap-2 group-hover:border-[#60A5FA]">
-                            View Credential
+                    <div class="flex items-center gap-2">
+                        <a href="{{ route('certificate.detail', $cert->id) }}" class="text-xs font-bold text-[#1E3A8A] dark:text-[#E3F2FD] bg-[#DBEAFE] dark:bg-[#0F172A] hover:bg-[#BFDBFE] dark:hover:bg-[#2563EB] border border-[#93C5FD] dark:border-[#1E293B] shadow-sm px-5 py-2.5 rounded-full transition-colors flex items-center gap-2 group-hover:border-[#60A5FA]">
+                            View Details
                         </a>
-                    @endif
+                    </div>
                 </div>
             </div>
         @empty

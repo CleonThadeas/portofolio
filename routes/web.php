@@ -25,6 +25,8 @@ Route::middleware([\App\Http\Middleware\GuestGateway::class])->group(function ()
     Route::get('/experiences', [PageController::class, 'experiencesArchive'])->name('experiences.archive');
     Route::get('/certificates', [PageController::class, 'certificatesArchive'])->name('certificates.archive');
     Route::get('/activities', [PageController::class, 'activitiesArchive'])->name('activities.archive');
+    Route::get('/certificate/{id}', [PageController::class, 'certificateDetail'])->name('certificate.detail');
+    Route::get('/activity/{id}', [PageController::class, 'activityDetail'])->name('activity.detail');
     Route::get('/project/{slug}', [PageController::class, 'projectDetail'])->name('project.detail');
     Route::post('/contact', [PageController::class, 'sendMessage'])->name('contact.send');
 });
